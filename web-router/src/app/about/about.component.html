@@ -1,0 +1,57 @@
+<div class="container mt-3">
+    <div class="row row-cols-1 row-cols-md-2 g-4 mx-3">
+      <div class="col">
+        <div class="card" data-aos="flip-left">
+          <div class="card-body">
+            <img src="../assets/images/regformimg.jpeg" width="100%" alt="">
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card" data-aos="flip-right">
+          <div class="card-body">
+            <div class="formclass">
+              <h2>Registration Form</h2>
+              <form name="main-form" onsubmit="return subfun();" action="thanks.html" target="_blank">
+                <label for="name" class="form-label">Name:</label>
+                <input type="text" name="username" class="form-controle" placeholder="Your name here" id="username">
+                <br><br>
+
+                <label for="">Gender:</label>
+                <input type="radio" name="gender" id="male">
+                <label for="male">Male</label>
+                <input type="radio" name="gender" id="female">
+                <label for="female">Female</label> <br> <br>
+
+                <label class="form-label" for="email">Email:</label>
+                <input class="form-control" type="email" id="email" placeholder="Your email here">
+                <br> <br>
+
+                <label for="courses">Courses required:</label>
+                <select name="courses" id="courses">
+                  <option value="value" selected>Select Box</option>
+                  <option value="MEAN" id="MEAN">MEAN</option>
+                  <option value="MERN" id="MERN">MERN</option>
+                  <option value="DEVOPS" id="DEVOPS">DEVOPS</option>
+                </select> <br>
+                <br>
+                <label class="form-label" for="sk">Software Knowledge:</label> <br>
+                <input type="checkbox" id="skill1" name="skill1" value="Word">
+                <label class="form-label" for="skill1">Word</label>
+                <input type="checkbox" id="skill2" name="skill2" value="PHP">
+                <label class="form-label" for="skill2"> PHP</label>
+                <input type="checkbox" id="skill3" name="skill3" value="MS-Java">
+                <label class="form-label" for="skill3"> MS-Java</label>
+                <br><br>
+
+                <label for="remark" class="form-label">Remarks:</label> <br>
+                <textarea class="form-control" id="remarks" cols="30" rows="10"></textarea> <br> <br>
+
+                <input type="submit" value="Submit">
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

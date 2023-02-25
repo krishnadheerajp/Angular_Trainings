@@ -1,0 +1,37 @@
+<!-- <button mat-raised-button color="primary">Click me!</button> -->
+<mat-toolbar color="primary">
+    <span>Home</span>
+    <span class="nav-links">Services</span>
+    <span class="nav-links">Registration</span>
+    <span class="nav-links">Contact Us</span>
+  </mat-toolbar>
+
+  <h2 [ngStyle]="{'color':'green','font-weight':'bold'}">Course Selection</h2>
+<mat-form-field appearance="fill">
+  <mat-label>Select LVC Course</mat-label>
+  <mat-select>
+    <mat-option *ngFor="let food of foods" [value]="food.value">
+      {{food.viewValue}}
+    </mat-option>
+  </mat-select>
+</mat-form-field> <br> <br>
+
+
+<button mat-raised-button
+        matTooltip="Welcome to the LVC platform" matBadge="Hi"
+        aria-label="Button that displays a tooltip when focused or hovered over">
+  Hello, User hover on me
+</button>
+
+<br> <br>
+
+<mat-chip-listbox aria-label="Fish selection">
+    <mat-chip-option>Learn Mean</mat-chip-option>
+    <mat-chip-option>Learn Mevn</mat-chip-option>
+    <mat-chip-option color="accent" selected>Learn PHP</mat-chip-option>
+    <mat-chip-option color="warn">Learn MS-Java</mat-chip-option>
+  </mat-chip-listbox>
+
+  <h3 [ngClass]="{'avl':'isAvl', 'unavl':'!isAvl'}">Changing colors</h3>
+  
+    

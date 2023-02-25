@@ -1,0 +1,130 @@
+<div class="container my-3">
+  <h1>Profile Page</h1>
+  <form #f="ngForm" novalidate (ngSubmit)="save(f.value, f.form.valid)">
+    <!-- we will place our fields here -->
+    <!--name-->
+    <div>
+    <label class="fw-bold">Name</label>
+    <!--bind name to ngModel, it's required with minimum 5 characters-->
+    <input type="text" name="name" [(ngModel)]="user.name" #name="ngModel" required minlength="5" class="form-control">
+    <!--show error only when field is not valid & it's dirty or form submited-->
+    <small [hidden]="name.valid || (name.pristine && !f.submitted)">
+    Name is required (minimum 5 characters).
+    </small>
+    </div>
+   
+    <div>
+     <label class="fw-bold">Email</label>
+     <!--bind name to ngModel, it's required with minimum 5 characters-->
+     <input type="email" name="email" [(ngModel)]="user.email" #email="ngModel" required class="form-control">
+     <!--show error only when field is not valid & it's dirty or form submited-->
+     <small [hidden]="email.valid || (email.pristine && !f.submitted)">
+       Email is required
+     </small>
+     </div>
+
+     <div>
+      <p>Gender:</p>
+      <input type="radio" id="age1" required name="gender" value="Male" [(ngModel)]="user.gender" #gender="ngModel">
+      <label for="age1">Male</label><br>
+      <input type="radio" id="age2" name="gender" [(ngModel)]="user.gender" #gender="ngModel" value="Female">
+      <label for="age2">Female</label><br>  
+      <small [hidden]="gender.valid || (gender.pristine && !f.submitted)">
+        Gender is required
+      </small>
+     </div> <br>
+
+     <div>
+      <label for="courses">Courses:</label>
+      <select name="courses" id="courses" [(ngModel)]="user.courses" #courses="ngModel" required>
+        <option value="DEVOPS">DEVOPS</option>
+        <option value="MongoDB">MongoDB</option>
+        <option value="MySql">MySQL</option>
+      </select>
+      <small [hidden]="courses.valid || (courses.pristine && !f.submitted)">
+        Courses is required
+      </small>
+     </div> <br>
+
+     <div>
+      <p><label for="ocr">Other Course Requirements:</label></p>
+      <textarea id="ocr" name="ocr" [(ngModel)]="user.ocr" #ocr="ngModel" required rows="3" cols="50"></textarea>
+      <small [hidden]="ocr.valid || (ocr.pristine && !f.submitted)">
+        Other Course Requirements is required
+      </small>
+     </div>
+      
+      <!--adrress group-->
+      <!-- <div ngModelGroup="address"> -->
+      <!--street-->
+      <!-- <div> -->
+     <!-- <label class="fw-bold">Street</label>
+      <input type="text" name="street" [(ngModel)]="user.address.street" #street="ngModel" required class="form-control">
+      <small [hidden]="street.valid || (street.pristine && !f.submitted)" class="text-danger">
+      Street is required.
+      </small>
+      </div> -->
+      <!--postcode-->
+      <!-- <div> -->
+      <!-- <label class="fw-bold">Post code</label>
+      <input type="text" name="postcode" [(ngModel)]="user.address.postcode" class="form-control">
+      </div>
+      </div> -->
+      <button class="btn btn-success my-3" type="submit">Submit</button>
+     </form>
+   
+     <div class="container">
+       <h4 class="text-success">Your Details</h4>
+       <h5> Name: {{f.value.name}}</h5>
+       <h5>Email: {{f.value.email}}</h5>
+       <h5>Gender: {{f.value.gender}}</h5>
+       <h5>Courses: {{f.value.courses}}</h5>
+       <h5>Other Course Requirements: {{f.value.ocr}}</h5>
+       <!-- <h5> Address: {{f.value.address.street}}</h5>
+       <h5> Postcode: {{f.value.address.postcode}}</h5> -->
+       
+       <h5> {{f.value|json}}</h5>
+       
+       </div>
+   
+   
+       <!-- Reactive Forms-->
+
+       <!-- <div class="container mt-3">
+         <h1>
+           Welcome to {{title}}!!
+         </h1>
+         <form [formGroup]="angForm" novalidate>
+               <div class="form-group">
+                   <label>Name:</label>
+                   <input class="form-control" formControlName="name" type="text">
+               </div>
+               <div *ngIf="angForm.controls['name'].invalid && (angForm.controls['name'].dirty || angForm.controls['name'].touched)" 
+                class="alert alert-danger">
+                   <div *ngIf="angForm.controls['name'].errors">
+                     Name is required.
+                   </div>
+       
+       
+        </div>
+                <div class="form-group">
+                   <label>Address:</label>
+                   <input class="form-control" formControlName="address" type="text">
+               </div>
+               <div *ngIf="angForm.controls['address'].invalid && (angForm.controls['address'].dirty || angForm.controls['address'].touched)" 
+                  class="alert alert-danger">
+                   <div *ngIf="angForm.controls['address'].errors">
+                     address! is required.
+                   </div>
+               </div>
+               <button type="submit"
+                   [disabled]="angForm.pristine || angForm.invalid" class="btn mt-2 btn-success">
+                   Save
+               </button>
+         </form>
+         <br />
+         <p>Form value: {{ angForm.value | json }}</p>
+         <p>Form status: {{ angForm.status | json }}</p>
+       </div> -->
+   
+</div>

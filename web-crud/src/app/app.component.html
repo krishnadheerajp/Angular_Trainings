@@ -1,0 +1,25 @@
+<!-- <div *ngFor="let user of users$">
+  <p>{{user.name}}</p>
+</div> -->
+<div class="container my-5">
+  <table class="table table-hover">
+    <thead>
+    <tr>
+    <th>ID</th>
+    <th>Name</th>
+    <th>Designation</th>
+     <th>Age</th>
+     <th>Location</th>
+     </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let user of users$">
+   <td>{{ user.empid }}</td>
+   <td>{{ user.name }}</td>
+  <td>{{ user.designation }}</td>
+   <td>{{ user.age }}</td>
+   <td>{{user.location}}</td>
+   </tr>
+    </tbody>
+   </table>
+</div>

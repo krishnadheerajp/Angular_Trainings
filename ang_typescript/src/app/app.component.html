@@ -1,0 +1,67 @@
+<div class="container my-3">
+  <h2>ngIf</h2>
+<!-- <ul *ngFor="let person of people">
+<li *ngIf="person.age < 35">
+{{ person.name }} {{ person.age }}
+</li>
+</ul> -->
+
+<h2>ngSwitch</h2>
+<!-- <ul *ngFor="let person of people"
+    [ngSwitch]="person.country"> 
+  <li *ngSwitchCase="'UK'" 
+      class="text-success">{{ person.name }} ({{ person.country }})
+  </li>
+  <li *ngSwitchCase="'USA'"
+      class="text-primary">{{ person.name }} ({{ person.country }})
+  </li>
+  <li *ngSwitchCase="'HK'"
+      class="text-danger">{{ person.name }} ({{ person.country }})
+  </li>
+  <li *ngSwitchDefault 
+      class="text-warning">{{ person.name }} ({{ person.country }})
+  </li>
+</ul> -->
+
+<h2>Pipes</h2>
+<!-- <div> 
+  The name is {{Name1}}<br>  
+  The first Topic is {{appList[0] | lowercase}}<br> 
+  The second Topic is {{appList[1] | lowercase}}<br> 
+  The third Topic is {{appList[2]| uppercase}}<br> 
+  The slice can be used to get two characters of first string as {{appList[0] | slice:0:2}} <br>
+  It is also used to get three characters of second string as {{appList[0] | slice:1:4 | uppercase}} <br>
+</div> <br> -->
+
+<h2>Image Gallery</h2>
+  <!-- <ul>
+     <li>{{lst.ID}}</li>
+     <img width="100%" height="50%" [src] = 'lst.url'>
+  </ul> -->
+
+  <!-- <table> 
+    <tr *ngFor = 'let lst of appList1'>
+      <td><img width="100%" height="50%" [src] = 'lst.url'></td>
+      <td><img width="100%" height="50%" [src] = 'lst.url'></td>
+    </tr>
+  </table> -->
+
+  <!-- <div class="row row-cols-1 row-cols-md-2 g-4">
+    <div *ngFor = 'let lst of appList1' class="col">
+      <div class="card h-100">
+        <img [src] = 'lst.url' height="100%"  class="card-img-top" alt="Classroom pics">
+      </div>
+    </div>
+  </div> -->
+
+  <div>Hello my name is {{name}}.
+    <button class="btn btn-primary my-3" (click)="sayMyName()">Say my name</button>
+  </div>
+
+  <div>
+    <label>Name: </label>
+    <input type="text" [(ngModel)]="name">
+    <h1>Hello {{name}}!</h1>
+  </div>
+
+</div>
